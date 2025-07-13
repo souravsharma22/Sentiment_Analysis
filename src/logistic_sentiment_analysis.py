@@ -37,3 +37,10 @@ print(f"Accuracy :- {accuracy:.4f}")
 print()
 print("Classification Report:-")
 print(report)
+
+#FOR SAVING THE TRAINED LOGISTIC MODEL
+import joblib
+joblib.dump(pipeline, "sentiment_model.pkl")
+
+model=joblib.load("sentiment_model.pkl")
+print(model.predict(["This movie was awesome!"]))
